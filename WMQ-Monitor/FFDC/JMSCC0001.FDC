@@ -1,0 +1,356 @@
+----------------------------------START FFST------------------------------------
+D:\workspace\WMQ-Monitor\FFDC\JMSCC0001.FDC PID:3024
+
+                                    JMS Common Client First Failure Symptom Report
+                                            
+
+Product          :- IBM WebSphere MQ classes for JMS
+Date/Time        :- Mon Jun 19 15:16:55 CST 2017
+System time      :- 1497856615595
+Operating System :- Windows 7
+UserID           :- 5254259
+Java Vendor      :- Oracle Corporation
+Java Version     :- 24.55-b03
+
+Source Class     :- com.ibm.mq.jmqi.remote.impl.RemoteProxyQueue
+Source Method    :- proxyMQGET(RemoteTls,MQMD,MQGMO,int,byte [ ],Pint,SpiGetOptions,Pint,Pint)
+ProbeID          :- 01
+Thread           :- name=Thread-2 priority=6 group=main ccl=sun.misc.Launcher$AppClassLoader@ef137d
+
+                                      Data
+                                      ----
+
+|   Description  :-  Thread interrupted while waiting for lock
+
+                              Version information
+                              -------------------
+
+Java Message Service Client
+7.5.0.2
+p750-002-130627
+Production
+
+WebSphere MQ classes for Java Message Service
+7.5.0.2
+p750-002-130627
+Production
+
+IBM WebSphere MQ JMS Provider
+7.5.0.2
+p750-002-130627
+Production
+
+Common Services for Java Platform, Standard Edition
+7.5.0.2
+p750-002-130627
+Production
+
+
+
+                                  Stack trace
+                                  -----------
+
+Stack trace to show the location of the FFST call
+|   FFST Location  :-  java.lang.Exception
+|   	at com.ibm.msg.client.commonservices.trace.Trace.getCurrentPosition(Trace.java:1972)
+|   	at com.ibm.msg.client.commonservices.trace.Trace.createFFSTString(Trace.java:1911)
+|   	at com.ibm.msg.client.commonservices.trace.Trace.ffstInternal(Trace.java:1800)
+|   	at com.ibm.msg.client.commonservices.trace.Trace.ffst(Trace.java:1624)
+|   	at com.ibm.mq.jmqi.remote.impl.RemoteProxyQueue.proxyMQGET(RemoteProxyQueue.java:2514)
+|   	at com.ibm.mq.jmqi.remote.api.RemoteFAP.jmqiGetInternalWithRecon(RemoteFAP.java:6643)
+|   	at com.ibm.mq.jmqi.remote.api.RemoteFAP.jmqiGetInternal(RemoteFAP.java:6539)
+|   	at com.ibm.mq.jmqi.internal.JmqiTools.getMessage(JmqiTools.java:1296)
+|   	at com.ibm.mq.jmqi.remote.api.RemoteFAP.jmqiGet(RemoteFAP.java:6500)
+|   	at com.ibm.mq.ese.jmqi.InterceptedJmqiImpl.jmqiGet(InterceptedJmqiImpl.java:884)
+|   	at com.ibm.mq.ese.jmqi.ESEJMQI.jmqiGet(ESEJMQI.java:362)
+|   	at com.ibm.mq.MQDestination.internalGetMessage(MQDestination.java:1012)
+|   	at com.ibm.mq.MQDestination.getInt(MQDestination.java:585)
+|   	at com.ibm.mq.MQDestination.get(MQDestination.java:456)
+|   	at com.ibm.mq.pcf.PCFMessageAgent.send(PCFMessageAgent.java:201)
+|   	at datacollect.IntelligentAgent.CurrDepths(IntelligentAgent.java:90)
+|   	at datacollect.IntelligentAgent.recordDepths(IntelligentAgent.java:121)
+|   	at graphics.MonitorBoard$3$1.run(MonitorBoard.java:141)
+|   	at java.lang.Thread.run(Unknown Source)
+|   
+
+                            Property Store Contents
+                            -----------------------
+
+All currently set properties
+|   awt.toolkit                      :-  sun.awt.windows.WToolkit
+|   file.encoding                    :-  GBK
+|   file.encoding.pkg                :-  sun.io
+|   file.separator                   :-  \
+|   java.awt.graphicsenv             :-  sun.awt.Win32GraphicsEnvironment
+|   java.awt.printerjob              :-  sun.awt.windows.WPrinterJob
+|   java.class.path                  :-  D:\workspace\WMQ-Monitor\bin;D:\Program Files\IBM\WebSphere MQ\java\lib\com.ibm.mq.headers.jar;D:\Program Files\IBM\WebSphere MQ\java\lib\com.ibm.mq.pcf.jar;D:\Program Files\IBM\WebSphere MQ\java\lib\jta.jar;D:\Program Files\IBM\WebSphere MQ\java\lib\com.ibm.mq.jmqi.jar;D:\Program Files\IBM\WebSphere MQ\java\lib\connector.jar;D:\Program Files\IBM\WebSphere MQ\java\lib\com.ibm.mq.commonservices.jar;D:\Program Files\IBM\WebSphere MQ\java\lib\com.ibm.mq.jar;D:\Program Files\IBM\WebSphere MQ\java\lib\jms.jar;D:\Program Files\IBM\WebSphere MQ\java\lib\dhbcore.jar;D:\Program Files\IBM\WebSphere MQ\java\lib\rmm.jar;D:\Program Files\IBM\WebSphere MQ\java\lib\jndi.jar;D:\Program Files\IBM\WebSphere MQ\java\lib\ldap.jar;D:\Program Files\IBM\WebSphere MQ\java\lib\fscontext.jar;D:\Program Files\IBM\WebSphere MQ\java\lib\providerutil.jar;D:\Program Files\IBM\WebSphere MQ\java\lib\CL3Export.jar;D:\Program Files\IBM\WebSphere MQ\java\lib\CL3Nonexport.jar;D:\Program Files\IBM\WebSphere MQ\java\lib\com.ibm.mqjms.jar;D:\Program Files\Java\poi-bin-3.16-20170419\poi-3.16\poi-3.16.jar;D:\workspace\WMQ-Monitor\jgoodies-common-1.8.0.jar;D:\workspace\WMQ-Monitor\jgoodies-forms-1.8.0.jar
+|   java.class.version               :-  51.0
+|   java.endorsed.dirs               :-  D:\Program Files\Java\jre7\lib\endorsed
+|   java.ext.dirs                    :-  D:\Program Files\Java\jre7\lib\ext;C:\Windows\Sun\Java\lib\ext
+|   java.home                        :-  D:\Program Files\Java\jre7
+|   java.io.tmpdir                   :-  C:\Users\5254259\AppData\Local\Temp\
+|   java.library.path                :-  D:\Program Files\Java\jre7\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;D:/Program Files/Java/jre7/bin/client;D:/Program Files/Java/jre7/bin;D:/Program Files/Java/jre7/lib/i386;D:\Program Files\IBM\WebSphere MQ\java\lib;C:\Program Files\Common Files\NetSarang;E:\app\BOC\product\11.2.0\client_2\bin;E:\app\BOC\product\11.2.0\client_1;C:\Program Files\NVIDIA Corporation\PhysX\Common;C:\Program Files\Intel\iCLS Client\;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\Intel\Intel(R) Management Engine Components\IPT;D:\MinGW\bin;D:\Program Files\Java\jdk1.7.0_55\bin;C:\Program Files\IBM\Personal Communications\;C:\Program Files\IBM\Trace Facility\;D:\Python27\;C:\strawberry\c\bin;C:\strawberry\perl\bin;C:\Program Files\Huawei\HUAWEI DSM\DSM Client;C:\Program Files\Microsoft\Web Platform Installer\;C:\Program Files\Microsoft ASP.NET\ASP.NET Web Pages\v1.0\;C:\Program Files\Windows Kits\8.0\Windows Performance Toolkit\;C:\Program Files\Microsoft SQL Server\110\Tools\Binn\;C:\Program Files\TortoiseSVN\bin;D:\Program Files\Anaconda2;D:\Program Files\Anaconda2\Scripts;D:\Program Files\Anaconda2\Library\bin;D:\Program Files\Git\cmd;D:\Program Files\IBM\WebSphere MQ\bin;D:\Program Files\IBM\WebSphere MQ\tools\c\samples\bin;D:\eclipse;;.
+|   java.runtime.name                :-  Java(TM) SE Runtime Environment
+|   java.runtime.version             :-  1.7.0_55-b13
+|   java.specification.name          :-  Java Platform API Specification
+|   java.specification.vendor        :-  Oracle Corporation
+|   java.specification.version       :-  1.7
+|   java.vendor                      :-  Oracle Corporation
+|   java.vendor.url                  :-  http://java.oracle.com/
+|   java.vendor.url.bug              :-  http://bugreport.sun.com/bugreport/
+|   java.version                     :-  1.7.0_55
+|   java.vm.info                     :-  mixed mode, sharing
+|   java.vm.name                     :-  Java HotSpot(TM) Client VM
+|   java.vm.specification.name       :-  Java Virtual Machine Specification
+|   java.vm.specification.vendor     :-  Oracle Corporation
+|   java.vm.specification.version    :-  1.7
+|   java.vm.vendor                   :-  Oracle Corporation
+|   java.vm.version                  :-  24.55-b03
+|   line.separator                   :-  
+|   
+|   os.arch                          :-  x86
+|   os.name                          :-  Windows 7
+|   os.version                       :-  6.1
+|   path.separator                   :-  ;
+|   sun.arch.data.model              :-  32
+|   sun.awt.enableExtraMouseButtons  :-  true
+|   sun.boot.class.path              :-  D:\Program Files\Java\jre7\lib\resources.jar;D:\Program Files\Java\jre7\lib\rt.jar;D:\Program Files\Java\jre7\lib\sunrsasign.jar;D:\Program Files\Java\jre7\lib\jsse.jar;D:\Program Files\Java\jre7\lib\jce.jar;D:\Program Files\Java\jre7\lib\charsets.jar;D:\Program Files\Java\jre7\lib\jfr.jar;D:\Program Files\Java\jre7\classes
+|   sun.boot.library.path            :-  D:\Program Files\Java\jre7\bin
+|   sun.cpu.endian                   :-  little
+|   sun.cpu.isalist                  :-  pentium_pro+mmx pentium_pro pentium+mmx pentium i486 i386 i86
+|   sun.desktop                      :-  windows
+|   sun.io.unicode.encoding          :-  UnicodeLittle
+|   sun.java.command                 :-  graphics.MonitorBoard
+|   sun.java.launcher                :-  SUN_STANDARD
+|   sun.jnu.encoding                 :-  GBK
+|   sun.management.compiler          :-  HotSpot Client Compiler
+|   sun.os.patch.level               :-  Service Pack 1
+|   user.country                     :-  CN
+|   user.dir                         :-  D:\workspace\WMQ-Monitor
+|   user.home                        :-  C:\Users\5254259
+|   user.language                    :-  zh
+|   user.name                        :-  5254259
+|   user.script                      :-  
+|   user.timezone                    :-  
+|   user.variant                     :-  
+
+                           WorkQueueMananger Contents
+                           --------------------------
+
+|   Current ThreadPool size      :-  0
+|   Maintain ThreadPool size     :-  false
+|   Maximum ThreadPool size      :-  -1
+|   ThreadPool inactive timeout  :-  0
+
+                               Runtime properties
+                               ------------------
+
+|   Available processors         :-  4
+|   Free memory in bytes (now)   :-  7064096
+|   Max memory in bytes          :-  259522560
+|   Total memory in bytes (now)  :-  16252928
+
+                           Component Manager Contents
+                           --------------------------
+
+Common Services Components:
+|   CMVC               :-  p750-002-130627
+|   Class Name         :-  class com.ibm.msg.client.commonservices.j2se.J2SEComponent
+|   Component Name     :-  com.ibm.msg.client.commonservices.j2se
+|   Component Title    :-  Common Services for Java Platform, Standard Edition
+|   Factory Class      :-  class com.ibm.msg.client.commonservices.j2se.CommonServicesImplementation
+|   Version            :-  7.5.0.2
+|   inPreferenceTo[0]  :-  com.ibm.msg.client.commonservices.j2me
+
+Messaging Provider Components:
+|   CMVC             :-  p750-002-130627
+|   Class Name       :-  class com.ibm.msg.client.wmq.factories.WMQComponent
+|   Component Name   :-  com.ibm.msg.client.wmq
+|   Component Title  :-  IBM WebSphere MQ JMS Provider
+|   Factory Class    :-  class com.ibm.msg.client.wmq.factories.WMQFactoryFactory
+|   Version          :-  7.5.0.2
+|   mqjbnd level     :-  p750-002-130627
+
+
+
+
+All Thread Information
+
+                          Name : TimerQueue
+                      Priority : 5
+                   ThreadGroup : java.lang.ThreadGroup[name=system,maxpri=10]
+                            ID : 14
+                         State : WAITING
+                         Stack : sun.misc.Unsafe.park(null:-2)
+                               : java.util.concurrent.locks.LockSupport.park(null:-1)
+                               : java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(null:-1)
+                               : java.util.concurrent.DelayQueue.take(null:-1)
+                               : javax.swing.TimerQueue.run(null:-1)
+                               : java.lang.Thread.run(null:-1)
+
+                          Name : Attach Listener
+                      Priority : 5
+                   ThreadGroup : java.lang.ThreadGroup[name=system,maxpri=10]
+                            ID : 5
+                         State : RUNNABLE
+
+                          Name : Signal Dispatcher
+                      Priority : 9
+                   ThreadGroup : java.lang.ThreadGroup[name=system,maxpri=10]
+                            ID : 4
+                         State : RUNNABLE
+
+                          Name : D3D Screen Updater
+                      Priority : 7
+                   ThreadGroup : java.lang.ThreadGroup[name=system,maxpri=10]
+                            ID : 16
+                         State : TIMED_WAITING
+                         Stack : java.lang.Object.wait(Object.java:-2)
+                               : sun.java2d.d3d.D3DScreenUpdateManager.run(null:-1)
+                               : java.lang.Thread.run(null:-1)
+
+                          Name : RcvThread: com.ibm.mq.jmqi.remote.impl.RemoteTCPConnection@17379477[qmid=WCB_2017-02-27_09.39.45,fap=12,channel=WCB.CONN            ,ccsid=1381,sharecnv=10,hbint=300,peer=/22.188.59.35(1411),localport=45250,ssl=no,hConns=0,LastDataSend=1497856588835 (1ms ago),LastDataRecv=1497856588831 (5ms ago),]
+                      Priority : 6
+                   ThreadGroup : java.lang.ThreadGroup[name=main,maxpri=10]
+                            ID : 28
+                         State : RUNNABLE
+                         Stack : java.net.SocketInputStream.socketRead0(null:-2)
+                               : java.net.SocketInputStream.read(null:-1)
+                               : java.net.SocketInputStream.read(null:-1)
+                               : com.ibm.mq.jmqi.remote.impl.RemoteTCPConnection.receive(RemoteTCPConnection.java:1545)
+                               : com.ibm.mq.jmqi.remote.impl.RemoteRcvThread.receiveBuffer(RemoteRcvThread.java:794)
+                               : com.ibm.mq.jmqi.remote.impl.RemoteRcvThread.receiveOneTSH(RemoteRcvThread.java:757)
+                               : com.ibm.mq.jmqi.remote.impl.RemoteRcvThread.run(RemoteRcvThread.java:150)
+                               : java.lang.Thread.run(null:-1)
+
+                          Name : Thread-2
+                      Priority : 6
+                   ThreadGroup : java.lang.ThreadGroup[name=main,maxpri=10]
+                            ID : 17
+                         State : RUNNABLE
+                         Stack : java.lang.Thread.dumpThreads(null:-2)
+                               : java.lang.Thread.getAllStackTraces(null:-1)
+                               : com.ibm.msg.client.commonservices.j2se.trace.DefaultTracer.generateThreadInfo(DefaultTracer.java:1145)
+                               : com.ibm.msg.client.commonservices.j2se.trace.DefaultTracer.access$1200(DefaultTracer.java:155)
+                               : com.ibm.msg.client.commonservices.j2se.trace.DefaultTracer$8.run(DefaultTracer.java:1100)
+                               : com.ibm.msg.client.commonservices.j2se.trace.DefaultTracer$8.run(DefaultTracer.java:1027)
+                               : java.security.AccessController.doPrivileged(null:-2)
+                               : com.ibm.msg.client.commonservices.j2se.trace.DefaultTracer.ffst(DefaultTracer.java:1025)
+                               : com.ibm.msg.client.commonservices.j2se.wmqsupport.TracerImpl.ffst(TracerImpl.java:142)
+                               : com.ibm.msg.client.commonservices.trace.Trace.ffstInternal(Trace.java:1805)
+                               : com.ibm.msg.client.commonservices.trace.Trace.ffst(Trace.java:1624)
+                               : com.ibm.mq.jmqi.remote.impl.RemoteProxyQueue.proxyMQGET(RemoteProxyQueue.java:2514)
+                               : com.ibm.mq.jmqi.remote.api.RemoteFAP.jmqiGetInternalWithRecon(RemoteFAP.java:6643)
+                               : com.ibm.mq.jmqi.remote.api.RemoteFAP.jmqiGetInternal(RemoteFAP.java:6539)
+                               : com.ibm.mq.jmqi.internal.JmqiTools.getMessage(JmqiTools.java:1296)
+                               : com.ibm.mq.jmqi.remote.api.RemoteFAP.jmqiGet(RemoteFAP.java:6500)
+                               : com.ibm.mq.ese.jmqi.InterceptedJmqiImpl.jmqiGet(InterceptedJmqiImpl.java:884)
+                               : com.ibm.mq.ese.jmqi.ESEJMQI.jmqiGet(ESEJMQI.java:362)
+                               : com.ibm.mq.MQDestination.internalGetMessage(MQDestination.java:1012)
+                               : com.ibm.mq.MQDestination.getInt(MQDestination.java:585)
+                               : com.ibm.mq.MQDestination.get(MQDestination.java:456)
+                               : com.ibm.mq.pcf.PCFMessageAgent.send(PCFMessageAgent.java:201)
+                               : datacollect.IntelligentAgent.CurrDepths(IntelligentAgent.java:90)
+                               : datacollect.IntelligentAgent.recordDepths(IntelligentAgent.java:121)
+                               : graphics.MonitorBoard$3$1.run(MonitorBoard.java:141)
+                               : java.lang.Thread.run(null:-1)
+
+                          Name : DestroyJavaVM
+                      Priority : 5
+                   ThreadGroup : java.lang.ThreadGroup[name=main,maxpri=10]
+                            ID : 13
+                         State : RUNNABLE
+
+                          Name : Reference Handler
+                      Priority : 10
+                   ThreadGroup : java.lang.ThreadGroup[name=system,maxpri=10]
+                            ID : 2
+                         State : WAITING
+                         Stack : java.lang.Object.wait(Object.java:-2)
+                               : java.lang.Object.wait(Object.java:503)
+                               : java.lang.ref.Reference$ReferenceHandler.run(null:-1)
+
+                          Name : AWT-EventQueue-0
+                      Priority : 6
+                   ThreadGroup : java.lang.ThreadGroup[name=main,maxpri=10]
+                            ID : 12
+                         State : WAITING
+                         Stack : sun.misc.Unsafe.park(null:-2)
+                               : java.util.concurrent.locks.LockSupport.park(null:-1)
+                               : java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(null:-1)
+                               : java.awt.EventQueue.getNextEvent(null:-1)
+                               : java.awt.EventDispatchThread.pumpOneEventForFilters(null:-1)
+                               : java.awt.EventDispatchThread.pumpEventsForFilter(null:-1)
+                               : java.awt.EventDispatchThread.pumpEventsForHierarchy(null:-1)
+                               : java.awt.EventDispatchThread.pumpEvents(null:-1)
+                               : java.awt.EventDispatchThread.pumpEvents(null:-1)
+                               : java.awt.EventDispatchThread.run(null:-1)
+
+                          Name : AWT-Shutdown
+                      Priority : 5
+                   ThreadGroup : java.lang.ThreadGroup[name=system,maxpri=10]
+                            ID : 9
+                         State : WAITING
+                         Stack : java.lang.Object.wait(Object.java:-2)
+                               : java.lang.Object.wait(Object.java:503)
+                               : sun.awt.AWTAutoShutdown.run(null:-1)
+                               : java.lang.Thread.run(null:-1)
+
+                          Name : Finalizer
+                      Priority : 8
+                   ThreadGroup : java.lang.ThreadGroup[name=system,maxpri=10]
+                            ID : 3
+                         State : WAITING
+                         Stack : java.lang.Object.wait(Object.java:-2)
+                               : java.lang.ref.ReferenceQueue.remove(null:-1)
+                               : java.lang.ref.ReferenceQueue.remove(null:-1)
+                               : java.lang.ref.Finalizer$FinalizerThread.run(null:-1)
+
+                          Name : Swing-Shell
+                      Priority : 6
+                   ThreadGroup : java.lang.ThreadGroup[name=system,maxpri=10]
+                            ID : 20
+                         State : WAITING
+                         Stack : sun.misc.Unsafe.park(null:-2)
+                               : java.util.concurrent.locks.LockSupport.park(null:-1)
+                               : java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(null:-1)
+                               : java.util.concurrent.LinkedBlockingQueue.take(null:-1)
+                               : java.util.concurrent.ThreadPoolExecutor.getTask(null:-1)
+                               : java.util.concurrent.ThreadPoolExecutor.runWorker(null:-1)
+                               : java.util.concurrent.ThreadPoolExecutor$Worker.run(null:-1)
+                               : sun.awt.shell.Win32ShellFolderManager2$ComInvoker$3.run(null:-1)
+                               : java.lang.Thread.run(null:-1)
+
+                          Name : AWT-Windows
+                      Priority : 6
+                   ThreadGroup : java.lang.ThreadGroup[name=system,maxpri=10]
+                            ID : 10
+                         State : RUNNABLE
+                         Stack : sun.awt.windows.WToolkit.eventLoop(null:-2)
+                               : sun.awt.windows.WToolkit.run(null:-1)
+                               : java.lang.Thread.run(null:-1)
+
+                          Name : Java2D Disposer
+                      Priority : 10
+                   ThreadGroup : java.lang.ThreadGroup[name=system,maxpri=10]
+                            ID : 8
+                         State : WAITING
+                         Stack : java.lang.Object.wait(Object.java:-2)
+                               : java.lang.ref.ReferenceQueue.remove(null:-1)
+                               : java.lang.ref.ReferenceQueue.remove(null:-1)
+                               : sun.java2d.Disposer.run(null:-1)
+                               : java.lang.Thread.run(null:-1)
+
+                          Name : JMSCCThreadPoolMaster
+                      Priority : 6
+                   ThreadGroup : java.lang.ThreadGroup[name=main,maxpri=10]
+                            ID : 29
+                         State : WAITING
+                         Stack : java.lang.Object.wait(Object.java:-2)
+                               : java.lang.Object.wait(Object.java:503)
+                               : com.ibm.msg.client.commonservices.j2se.workqueue.WorkQueueManagerImplementation$WorkQueueManagerThread.waitForNotification(WorkQueueManagerImplementation.java:660)
+                               : com.ibm.msg.client.commonservices.j2se.workqueue.WorkQueueManagerImplementation$WorkQueueManagerThread.waitForNotification(WorkQueueManagerImplementation.java:629)
+                               : com.ibm.msg.client.commonservices.j2se.workqueue.WorkQueueManagerImplementation$WorkQueueManagerThread.run(WorkQueueManagerImplementation.java:897)
+
+First Failure Symptom Report completed at Mon Jun 19 15:16:56 CST 2017
+------------------------------------END FFST------------------------------------
